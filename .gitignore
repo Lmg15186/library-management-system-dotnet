@@ -1,0 +1,17 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.slnLaunch.user
+
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# NuGet packages (restored automatically by Visual Studio)
+packages/
+*.nupkg
+
+# OS files
+Thumbs.db
+.DS_Store

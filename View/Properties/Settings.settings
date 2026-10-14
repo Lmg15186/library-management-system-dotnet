@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="View.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="View_UserServiceRef_UserService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44396/UserService.asmx</Value>
+    </Setting>
+    <Setting Name="View_BookServiceRef_BookService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44396/BookService.asmx</Value>
+    </Setting>
+    <Setting Name="View_MasterServiceRef_MasterService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44396/MasterService.asmx</Value>
+    </Setting>
+    <Setting Name="View_LoanServiceRef_LoanService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44396/LoanService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

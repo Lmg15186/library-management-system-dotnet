@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://ait.edu.au/library/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ait.edu.au/library/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ait.edu.au/library/">
+      <s:element name="GetBooks">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBooksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBooksResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByBookName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bookName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByBookNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByBookNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="authorName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByAuthorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByCategoryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="authorID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="categoryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="publishYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pages" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="publisher" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertBookResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="authorID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="categoryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="publishYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pages" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="publisher" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originalIsbn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBookResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteBookResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBooksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBooks" />
+  </wsdl:message>
+  <wsdl:message name="GetBooksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByBookNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByBookName" />
+  </wsdl:message>
+  <wsdl:message name="SearchByBookNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByBookNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="SearchByAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByCategory" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBook" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBook" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBook" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBookResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BookServiceSoap">
+    <wsdl:operation name="GetBooks">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns every book as a table.</wsdl:documentation>
+      <wsdl:input message="tns:GetBooksSoapIn" />
+      <wsdl:output message="tns:GetBooksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByBookName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search criteria 1: by book name (partial match).</wsdl:documentation>
+      <wsdl:input message="tns:SearchByBookNameSoapIn" />
+      <wsdl:output message="tns:SearchByBookNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByAuthor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search criteria 2: by author (partial match).</wsdl:documentation>
+      <wsdl:input message="tns:SearchByAuthorSoapIn" />
+      <wsdl:output message="tns:SearchByAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCategory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search criteria 3: by category (partial match).</wsdl:documentation>
+      <wsdl:input message="tns:SearchByCategorySoapIn" />
+      <wsdl:output message="tns:SearchByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBook">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new book.</wsdl:documentation>
+      <wsdl:input message="tns:InsertBookSoapIn" />
+      <wsdl:output message="tns:InsertBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a book, found by its original ISBN.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateBookSoapIn" />
+      <wsdl:output message="tns:UpdateBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a book by ISBN.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteBookSoapIn" />
+      <wsdl:output message="tns:DeleteBookSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BookServiceSoap" type="tns:BookServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBooks">
+      <soap:operation soapAction="http://ait.edu.au/library/GetBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByBookName">
+      <soap:operation soapAction="http://ait.edu.au/library/SearchByBookName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByAuthor">
+      <soap:operation soapAction="http://ait.edu.au/library/SearchByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCategory">
+      <soap:operation soapAction="http://ait.edu.au/library/SearchByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBook">
+      <soap:operation soapAction="http://ait.edu.au/library/InsertBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <soap:operation soapAction="http://ait.edu.au/library/UpdateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <soap:operation soapAction="http://ait.edu.au/library/DeleteBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BookServiceSoap12" type="tns:BookServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBooks">
+      <soap12:operation soapAction="http://ait.edu.au/library/GetBooks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByBookName">
+      <soap12:operation soapAction="http://ait.edu.au/library/SearchByBookName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByAuthor">
+      <soap12:operation soapAction="http://ait.edu.au/library/SearchByAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCategory">
+      <soap12:operation soapAction="http://ait.edu.au/library/SearchByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBook">
+      <soap12:operation soapAction="http://ait.edu.au/library/InsertBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <soap12:operation soapAction="http://ait.edu.au/library/UpdateBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <soap12:operation soapAction="http://ait.edu.au/library/DeleteBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BookService">
+    <wsdl:port name="BookServiceSoap" binding="tns:BookServiceSoap">
+      <soap:address location="https://localhost:44396/BookService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BookServiceSoap12" binding="tns:BookServiceSoap12">
+      <soap12:address location="https://localhost:44396/BookService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

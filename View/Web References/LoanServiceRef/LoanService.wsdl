@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://ait.edu.au/library/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ait.edu.au/library/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ait.edu.au/library/">
+      <s:element name="GetActiveBorrows">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="uid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveBorrowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveBorrowsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllBorrows">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllBorrowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllBorrowsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllReservations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllReservationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllReservationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrowBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="uid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrowBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BorrowBookResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReserveBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="uid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="isbn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReserveBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReserveBookResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="uid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnBookResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetActiveBorrowsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveBorrows" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveBorrowsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveBorrowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBorrowsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllBorrows" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBorrowsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllBorrowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReservationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllReservations" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReservationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BorrowBookSoapIn">
+    <wsdl:part name="parameters" element="tns:BorrowBook" />
+  </wsdl:message>
+  <wsdl:message name="BorrowBookSoapOut">
+    <wsdl:part name="parameters" element="tns:BorrowBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReserveBookSoapIn">
+    <wsdl:part name="parameters" element="tns:ReserveBook" />
+  </wsdl:message>
+  <wsdl:message name="ReserveBookSoapOut">
+    <wsdl:part name="parameters" element="tns:ReserveBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBookSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnBook" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBookSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnBookResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LoanServiceSoap">
+    <wsdl:operation name="GetActiveBorrows">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the books this user has not returned yet.</wsdl:documentation>
+      <wsdl:input message="tns:GetActiveBorrowsSoapIn" />
+      <wsdl:output message="tns:GetActiveBorrowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBorrows">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns every loan, open or already returned.</wsdl:documentation>
+      <wsdl:input message="tns:GetAllBorrowsSoapIn" />
+      <wsdl:output message="tns:GetAllBorrowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns every reservation.</wsdl:documentation>
+      <wsdl:input message="tns:GetAllReservationsSoapIn" />
+      <wsdl:output message="tns:GetAllReservationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrowBook">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Borrows a book for a user.</wsdl:documentation>
+      <wsdl:input message="tns:BorrowBookSoapIn" />
+      <wsdl:output message="tns:BorrowBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReserveBook">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reserves a book for a user.</wsdl:documentation>
+      <wsdl:input message="tns:ReserveBookSoapIn" />
+      <wsdl:output message="tns:ReserveBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBook">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a borrowed book and charges the late fee.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnBookSoapIn" />
+      <wsdl:output message="tns:ReturnBookSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoanServiceSoap" type="tns:LoanServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetActiveBorrows">
+      <soap:operation soapAction="http://ait.edu.au/library/GetActiveBorrows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBorrows">
+      <soap:operation soapAction="http://ait.edu.au/library/GetAllBorrows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <soap:operation soapAction="http://ait.edu.au/library/GetAllReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrowBook">
+      <soap:operation soapAction="http://ait.edu.au/library/BorrowBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReserveBook">
+      <soap:operation soapAction="http://ait.edu.au/library/ReserveBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBook">
+      <soap:operation soapAction="http://ait.edu.au/library/ReturnBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoanServiceSoap12" type="tns:LoanServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetActiveBorrows">
+      <soap12:operation soapAction="http://ait.edu.au/library/GetActiveBorrows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBorrows">
+      <soap12:operation soapAction="http://ait.edu.au/library/GetAllBorrows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <soap12:operation soapAction="http://ait.edu.au/library/GetAllReservations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrowBook">
+      <soap12:operation soapAction="http://ait.edu.au/library/BorrowBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReserveBook">
+      <soap12:operation soapAction="http://ait.edu.au/library/ReserveBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBook">
+      <soap12:operation soapAction="http://ait.edu.au/library/ReturnBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoanService">
+    <wsdl:port name="LoanServiceSoap" binding="tns:LoanServiceSoap">
+      <soap:address location="https://localhost:44396/LoanService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoanServiceSoap12" binding="tns:LoanServiceSoap12">
+      <soap12:address location="https://localhost:44396/LoanService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+	<AutoRefresh>0</AutoRefresh>
+	<DataSources>
+		<DataSource Name="LocalDataSource">
+			<ConnectionProperties>
+				<DataProvider>System.Data.DataSet</DataProvider>
+				<ConnectString>/* Local Connection */</ConnectString>
+			</ConnectionProperties>
+			<rd:DataSourceID>33333333-3333-3333-3333-333333333333</rd:DataSourceID>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="ReservedDataSet">
+			<Query>
+				<DataSourceName>LocalDataSource</DataSourceName>
+				<CommandText />
+				<rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+			</Query>
+			<Fields>
+				<Field Name="RID">
+					<DataField>RID</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+				<Field Name="UID">
+					<DataField>UID</DataField>
+					<rd:TypeName>System.Int32</rd:TypeName>
+				</Field>
+				<Field Name="ISBN">
+					<DataField>ISBN</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="BookName">
+					<DataField>BookName</DataField>
+					<rd:TypeName>System.String</rd:TypeName>
+				</Field>
+				<Field Name="ReservedDate">
+					<DataField>ReservedDate</DataField>
+					<rd:TypeName>System.DateTime</rd:TypeName>
+				</Field>
+			</Fields>
+		</DataSet>
+	</DataSets>
+	<ReportSections>
+		<ReportSection>
+			<Body>
+				<ReportItems>
+					<Textbox Name="txtTitle">
+						<CanGrow>true</CanGrow>
+						<KeepTogether>true</KeepTogether>
+						<Paragraphs>
+							<Paragraph>
+								<TextRuns>
+									<TextRun>
+										<Value>Report 3 - Active Reservations</Value>
+										<Style>
+											<FontFamily>Segoe UI</FontFamily>
+											<FontSize>13pt</FontSize>
+											<FontWeight>Bold</FontWeight>
+											<Color>#00aab3</Color>
+										</Style>
+									</TextRun>
+								</TextRuns>
+								<Style />
+							</Paragraph>
+						</Paragraphs>
+						<rd:DefaultName>txtTitle</rd:DefaultName>
+						<Top>0in</Top>
+						<Left>0in</Left>
+						<Height>0.3in</Height>
+						<Width>5.20in</Width>
+						<Style />
+					</Textbox>
+					<Tablix Name="Tablix1">
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>0.50in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>0.50in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.30in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.80in</Width>
+								</TablixColumn>
+								<TablixColumn>
+									<Width>1.10in</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.25in</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="h_RID">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>RID</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Bold</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>h_RID</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>#DDDDDD</BackgroundColor>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="h_UID">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>UID</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Bold</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>h_UID</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>#DDDDDD</BackgroundColor>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="h_ISBN">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>ISBN</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Bold</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>h_ISBN</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>#DDDDDD</BackgroundColor>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="h_BookName">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>BookName</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Bold</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>h_BookName</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>#DDDDDD</BackgroundColor>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="h_ReservedDate">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>ReservedDate</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Bold</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>h_ReservedDate</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+														<BackgroundColor>#DDDDDD</BackgroundColor>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+								<TablixRow>
+									<Height>0.25in</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="d_RID">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!RID.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Default</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>d_RID</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="d_UID">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!UID.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Default</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>d_UID</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="d_ISBN">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ISBN.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Default</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>d_ISBN</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="d_BookName">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!BookName.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Default</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>d_BookName</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="d_ReservedDate">
+													<CanGrow>true</CanGrow>
+													<KeepTogether>true</KeepTogether>
+													<Paragraphs>
+														<Paragraph>
+															<TextRuns>
+																<TextRun>
+																	<Value>=Fields!ReservedDate.Value</Value>
+																	<Style>
+																		<FontFamily>Segoe UI</FontFamily>
+																		<FontSize>9pt</FontSize>
+																		<FontWeight>Default</FontWeight>
+																	</Style>
+																</TextRun>
+															</TextRuns>
+															<Style />
+														</Paragraph>
+													</Paragraphs>
+													<rd:DefaultName>d_ReservedDate</rd:DefaultName>
+													<Style>
+														<Border>
+															<Color>#c0c0c0</Color>
+															<Style>Solid</Style>
+														</Border>
+
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<PaddingBottom>2pt</PaddingBottom>
+													</Style>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+								<TablixMember />
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<KeepWithGroup>After</KeepWithGroup>
+								</TablixMember>
+								<TablixMember>
+									<Group Name="Details" />
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>ReservedDataSet</DataSetName>
+						<Top>0.4in</Top>
+						<Left>0in</Left>
+						<Height>0.5in</Height>
+						<Width>5.20in</Width>
+						<Style>
+							<Border>
+								<Style>None</Style>
+							</Border>
+						</Style>
+					</Tablix>
+				</ReportItems>
+				<Height>1.2in</Height>
+				<Style />
+			</Body>
+			<Width>5.60in</Width>
+			<Page>
+				<PageHeight>11in</PageHeight>
+				<PageWidth>6.20in</PageWidth>
+				<LeftMargin>0.25in</LeftMargin>
+				<RightMargin>0.25in</RightMargin>
+				<TopMargin>0.25in</TopMargin>
+				<BottomMargin>0.25in</BottomMargin>
+				<Style />
+			</Page>
+		</ReportSection>
+	</ReportSections>
+</Report>

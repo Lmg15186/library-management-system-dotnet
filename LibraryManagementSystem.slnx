@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Controller/Controller.csproj" Id="886736ff-0aa3-4356-b841-2470004f0446" />
+  <Project Path="LibraryService/LibraryService.csproj" Id="aca90e95-fd22-4e63-924f-946bd507dbda" />
+  <Project Path="Model/Model.csproj" Id="38dda1b9-273d-4652-8b39-7a8cdcdd9bd4" />
+  <Project Path="View/View.csproj" Id="adb16715-773d-4f5e-9b4f-8b931923fd45" />
+</Solution>
